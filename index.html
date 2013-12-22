@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gradually Varied Flow </title>
+    <link rel="stylesheet" href="gvf.css" type="text/css" />
+    <script type="text/javascript" src="app.js"></script>
+    
+<script src="http://handsontable.com/lib/jquery.min.js"></script>
+<script src="http://handsontable.com/dist/jquery.handsontable.full.js"></script>
+<link rel="stylesheet" media="screen" href="http://handsontable.com/dist/jquery.handsontable.full.css">
+<link rel="stylesheet" media="screen" href="http://handsontable.com/demo/css/samples.css">
+
+</head>
+
+
+
+
+<body>
+
+    <h1>GVF</h1> Gradually Varied Open Channel Flow in Circular Sections.
+    <p><input type="button" id="runForward" value="Run forward"   />
+       <input type="button" id="runBackwards"  value="Run backwards"    />
+        
+    </p>
+    <table>
+        <tr><td>Gravity:</td><td ><input size="10"  type="text" id="gravity" value="32.2"/></td>
+            <td>Flow:</td><td><input size="10" type="text" id="flow" value="42"/></td>
+            <td>Beginning Elevation:</td><td><input size="10" type="text" id="head1" value="12.2"/></td>
+        </tr>
+    </table>
+    
+
+
+    <div id="content"></div>
+    <div class="handsontable" id="div1"></div>
+    <div  id="divResults"></div>
+    Notes:<br />
+    <a href="http://handsontable.com/demo/numeric.html">http://handsontable.com/demo/numeric.html</a>
+    <a href="http://oreilly.com/javascript/excerpts/javascript-good-parts/awful-parts.html"> awful-parts</a>
+
+    <script type="text/javascript" >
+
+
+        var data = [
+
+["7.5", "7.5", "0.1", "0.024", "3.6", "0", "20", "10", "sect 1"],
+["7.5", "7.5", "1E-5", "0.024", "0", "20", "25", "10", "sec 2"]
+  ];
+  
+  $('#div1').handsontable({
+    data: data,
+    minSpareRows: 0,
+    colHeaders: ["DIABEGIN", "DIAEND", "SLOPE", "N", "YBEGIN", "XBEGIN", "XEND", "STEPS", "COMMENT"],
+    contextMenu: ['row_above', 'row_below', 'remove_row']
+  });
+
+$('#runForward').on('click', function () {
+    var tableData = $('#div1').handsontable('getData');
+   
+
+
+    var g = 32.2;
+    var diameter1 = 7.5;
+    var diameter2 = 7.5;
+    var slope = .1;
+    var n = .024;
+    var z = 660.1;
+    var y1 = 3.6;
+    var gvf = new CircularGVF(g, y1, 0, 20, n, slope, 305.6, diameter1, diameter2, 10, z, "sec1");
+    var result=gvf.solve();
+
+    $('#divResults').handsontable({
+        data: result.resultTable,
+        minSpareRows: 0,
+        columns: getColumnStyle(result),
+        colHeaders: result.columnHeader,
+        contextMenu: ['row_above', 'row_below', 'remove_row']
+    });
+
+});
+
+function getColumnStyle(result) {
+    var rval = [];
+    var i=0;
+    for(i=0; i<result.columnHeader.length; i++){
+        rval.push({  type:'numeric', format: '0.00'});
+            
+    }
+    return rval;
+}
+
+function convert2dArrayToCsv(arr) {
+    return arr.reduce(function (csvString, row) {
+        csvString += row.join(',');
+        csvString += ';';
+        return csvString;
+    }, '');
+}
+
+   </script>
+</body>
+</html>
