@@ -24,12 +24,10 @@
     </p>
     <table>
         <tr><td>Gravity:</td><td ><input size="10"  type="text" id="gravity" value="32.2"/></td>
-            <td>Flow:</td><td><input size="10" type="text" id="flow" value="42"/></td>
-            <td>Beginning Elevation:</td><td><input size="10" type="text" id="head1" value="12.2"/></td>
+            <td>Flow:</td><td><input size="10" type="text" id="flow" value="305.6"/></td>
+            <td>Beginning Elevation:</td><td><input size="10" type="text" id="z1" value="660.1"/></td>
         </tr>
     </table>
-    
-
 
     <div id="content"></div>
     <div class="handsontable" id="div1"></div>
@@ -60,14 +58,23 @@ $('#runForward').on('click', function () {
 
     
     var g = parseFloat($('#gravity').val());
-    var diameter1 = 7.5;
-    var diameter2 = 7.5;
-    var slope = .1;
-    var n = .024;
-    var z = 660.1;
-    var y1 = 3.6;
-    var gvf = new CircularGVF(g, y1, 0, 20, n, slope, 305.6, diameter1, diameter2, 10, z, "sec1");
-    var result=gvf.solve();
+    var q = parseFloat($('#flow').val());
+    var z1 = parseFloat($('#z1').val());
+    var result = [];
+    for (var rowIndex = 0; rowIndex < tableData.length; rowIndex++) {
+
+
+        var diameter1 = 7.5;
+        var diameter2 = 7.5;
+        var slope = .1;
+        var n = .024;
+
+        var y1 = 3.6;
+        var gvf = new CircularGVF(g, y1, 0, 20, n, slope, q, diameter1, diameter2, 10, z1, "sec1");
+        var r = gvf.solve();
+        result.push(r.resultTable);
+        r.resultTable = result;
+    }
 
     $('#divResults').handsontable({
         data: result.resultTable,
