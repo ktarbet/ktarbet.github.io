@@ -58,8 +58,8 @@ $('#runForward').on('click', function () {
     var tableData = $('#div1').handsontable('getData');
    
 
-
-    var g = 32.2;
+    
+    var g = parseFloat($('#gravity').val());
     var diameter1 = 7.5;
     var diameter2 = 7.5;
     var slope = .1;

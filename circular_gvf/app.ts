@@ -639,14 +639,6 @@ for(var istep = 0; istep < (this.steps - 1); istep++) {
 }
 
 
-class PipeLayout{
-static run(data):void {
-
-   //gvf = new CircularGVF(
-
-}
-
-}
 
 //window.onload = () => {
 //    var el = document.getElementById('content');

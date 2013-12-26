@@ -582,15 +582,6 @@ else
     return CircularGVF;
 })();
 
-var PipeLayout = (function () {
-    function PipeLayout() {
-    }
-    PipeLayout.run = function (data) {
-        //gvf = new CircularGVF(
-    };
-    return PipeLayout;
-})();
-
 //window.onload = () => {
 //    var el = document.getElementById('content');
 //    var greeter = new Greeter(el);
