@@ -16,11 +16,11 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="gvf.css" />
     <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="gvf.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />

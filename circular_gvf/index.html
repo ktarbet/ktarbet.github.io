@@ -54,26 +54,28 @@
 
 $('#runForward').on('click', function () {
     var tableData = $('#div1').handsontable('getData');
-   
-
-    
     var g = parseFloat($('#gravity').val());
     var q = parseFloat($('#flow').val());
     var z1 = parseFloat($('#z1').val());
     var result = [];
     for (var rowIndex = 0; rowIndex < tableData.length; rowIndex++) {
-
-
-        var diameter1 = 7.5;
-        var diameter2 = 7.5;
-        var slope = .1;
-        var n = .024;
-
-        var y1 = 3.6;
-        var gvf = new CircularGVF(g, y1, 0, 20, n, slope, q, diameter1, diameter2, 10, z1, "sec1");
+        var diameter1 = parseFloat(tableData[rowIndex][0]);
+        var diameter2 = parseFloat(tableData[rowIndex][1])
+        var slope = parseFloat(tableData[rowIndex][2]);
+        var n = parseFloat(tableData[rowIndex][3]);
+        var y1 = parseFloat(tableData[rowIndex][4]);
+        var x1 = parseFloat(tableData[rowIndex][5]);
+        var x2 = parseFloat(tableData[rowIndex][6]);
+        var steps = parseFloat(tableData[rowIndex][7]);
+        var gvf = new CircularGVF(g, y1, x1, x2, n, slope, q, diameter1, diameter2, steps, z1, "sec1");
         var r = gvf.solve();
-        result.push(r.resultTable);
-        r.resultTable = result;
+        if (i == 0) {
+            result = r; // r.resultTable;
+        }
+        else {
+           // result.push(r.resultTable);
+        }
+       //r.resultTable = result;
     }
 
     $('#divResults').handsontable({

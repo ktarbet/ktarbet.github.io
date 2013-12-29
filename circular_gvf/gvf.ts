@@ -645,16 +645,16 @@ for(var istep = 0; istep < (this.steps - 1); istep++) {
 //    var greeter = new Greeter(el);
 //    greeter.start();
 //};
-
-console.log("hi");
+//
+//console.log("hi");
 //    colHeaders: ["DIABEGIN", "DIAEND", "SLOPE", "N", "YBEGIN", "XBEGIN", "XEND", "STEPS", "COMMENT"],
 // ["7.5", "7.5", "0.1", "0.024", "3.6", "0", "20", "10", "sect 1"],
-var g = 32.2;
-var diameter1 = 7.5;
-var diameter2 = 7.5;
-var slope = .1;
-var n = .024;
-var z = 660.1;
-var y1 = 3.6;
-var gvf = new CircularGVF(g, y1, 0, 20, n, slope, 305.6, diameter1, diameter2, 10, z, "sec1");
-gvf.solve();
+//var g = 32.2;
+//var diameter1 = 7.5;
+//var diameter2 = 7.5;
+//var slope = .1;
+//var n = .024;
+//var z = 660.1;
+//var y1 = 3.6;
+//var gvf = new CircularGVF(g, y1, 0, 20, n, slope, 305.6, diameter1, diameter2, 10, z, "sec1");
+//gvf.solve();
