@@ -3,7 +3,7 @@
 <head>
     <title>Gradually Varied Flow </title>
     <link rel="stylesheet" href="gvf.css" type="text/css" />
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="gvf.js"></script>
     
 <script src="http://handsontable.com/lib/jquery.min.js"></script>
 <script src="http://handsontable.com/dist/jquery.handsontable.full.js"></script>
@@ -57,7 +57,9 @@ $('#runForward').on('click', function () {
     var g = parseFloat($('#gravity').val());
     var q = parseFloat($('#flow').val());
     var z1 = parseFloat($('#z1').val());
-    var result = [];
+    var tableOutput = [];
+    var colNames = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
+    var r = {};
     for (var rowIndex = 0; rowIndex < tableData.length; rowIndex++) {
         var diameter1 = parseFloat(tableData[rowIndex][0]);
         var diameter2 = parseFloat(tableData[rowIndex][1])
@@ -68,30 +70,32 @@ $('#runForward').on('click', function () {
         var x2 = parseFloat(tableData[rowIndex][6]);
         var steps = parseFloat(tableData[rowIndex][7]);
         var gvf = new CircularGVF(g, y1, x1, x2, n, slope, q, diameter1, diameter2, steps, z1, "sec1");
-        var r = gvf.solve();
-        if (i == 0) {
-            result = r; // r.resultTable;
+          r = gvf.solve();
+        if (rowIndex === 0) {
+            tableOutput = r.resultTable;
+             
+            break;
         }
         else {
-           // result.push(r.resultTable);
+            //tableOutput.push(r.resultTable);
         }
-       //r.resultTable = result;
+       
     }
 
     $('#divResults').handsontable({
-        data: result.resultTable,
+        data: r.resultTable,
         minSpareRows: 0,
-        columns: getColumnStyle(result),
-        colHeaders: result.columnHeader,
+        columns: getColumnStyle(colNames),
+        colHeaders: colNames,
         contextMenu: ['row_above', 'row_below', 'remove_row']
     });
 
 });
 
-function getColumnStyle(result) {
+function getColumnStyle(columnHeaders) {
     var rval = [];
     var i=0;
-    for(i=0; i<result.columnHeader.length; i++){
+    for(i=0; i<columnHeaders.length; i++){
         rval.push({  type:'numeric', format: '0.00'});
             
     }
