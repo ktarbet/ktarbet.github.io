@@ -63,25 +63,17 @@ var CircularGVF = (function () {
             return;
         }
 
-        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
-
+        this.Beta = CircularGVF.calc_beta(ygvf, this.D);
         this.A = CircularGVF.area(this.Beta, this.D);
         this.T = CircularGVF.topWidth(this.Beta, this.D);
         this.P = CircularGVF.perimeter(this.Beta, this.D);
 
-        /* height of centroid */
-        var hc = this.D * this.D * this.D / 24 * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3));
+        var dax = 0, hc = this.D * this.D * this.D / 24 * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3)), h = this.ddx * 0.00001, Beta2 = CircularGVF.calc_beta(ygvf, this.D + h);
 
-        var dax = 0;
         if (Math.abs(this.ddx) > 0) {
-            var h = this.ddx * .00001;
-            this.D += h;
-            this.Beta = Math.acos(1 - 2 * (ygvf) / this.D);
-            dax = (CircularGVF.area(this.Beta, this.D) - this.A) / 0.00001;
-            this.D -= h;
+            dax = (CircularGVF.area(Beta2, this.D) - this.A) / 0.00001;
         }
 
-        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
         var Fq = hc / (this.A * this.A) * dax;
 
         /* slope from mannings eq. */
