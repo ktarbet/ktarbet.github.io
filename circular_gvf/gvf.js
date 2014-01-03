@@ -1,3 +1,4 @@
+"use strict";
 var CircularGVF = (function () {
     function CircularGVF(g, y, x1, x2, n, So, Q, d1, d2, steps, z1, comment) {
         this.g = g;
@@ -20,11 +21,11 @@ var CircularGVF = (function () {
         this.dxdid = 0;
     }
     CircularGVF.calc_beta = function (y, D) {
-        return (Math.acos(1. - 2. * y / D));
+        return (Math.acos(1 - 2 * y / D));
     };
 
     CircularGVF.area = function (Beta, D) {
-        return (D * D / 4. * (Beta - Math.cos(Beta) * Math.sin(Beta)));
+        return (D * D / 4 * (Beta - Math.cos(Beta) * Math.sin(Beta)));
     };
 
     CircularGVF.perimeter = function (Beta, D) {
@@ -34,12 +35,11 @@ var CircularGVF = (function () {
         return D * Math.sin(Beta);
     };
 
-    CircularGVF.MomentAhc = function (B, A, D) {
-        var hcA = D * D * D / 24. * (3 * Math.sin(B) - 3 * B * Math.cos(B) - Math.pow(Math.sin(B), 3.));
+    CircularGVF.MomentAhc = function (B, D) {
+        var hcA = D * D * D / 24 * (3 * Math.sin(B) - 3 * B * Math.cos(B) - Math.pow(Math.sin(B), 3));
         return hcA;
     };
     CircularGVF.momentum = function (Q, g, A, Ahc) {
-        //    var hcA = this.D * this.D * this.D / 24. * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3.));
         return (Ahc + Q * Q / (g * A));
     };
 
@@ -48,17 +48,12 @@ var CircularGVF = (function () {
     // sets error_condition, and returns slope
     CircularGVF.prototype.slope = function (x, ygvf) {
         //console.log("solving for slope @x=" + x + "  and y= " +ygvf);
-        var dax;
-        var hc;
-        var Fq;
-        var Sf;
-
         /*******************************/
         /* variables which vary with x */
         /*******************************/
         this.D = this.d1 + this.ddx * Math.abs(x - this.x1);
 
-        if (Math.abs(1. - 2. * ygvf / this.D) > 1) {
+        if (Math.abs(1 - 2 * ygvf / this.D) > 1) {
             this.error_condition = 1;
             return;
         }
@@ -68,30 +63,32 @@ var CircularGVF = (function () {
             return;
         }
 
-        this.Beta = Math.acos(1. - 2. * ygvf / this.D);
+        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
 
         this.A = CircularGVF.area(this.Beta, this.D);
         this.T = CircularGVF.topWidth(this.Beta, this.D);
         this.P = CircularGVF.perimeter(this.Beta, this.D);
 
-        hc = this.D * this.D * this.D / 24. * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3.));
+        /* height of centroid */
+        var hc = this.D * this.D * this.D / 24 * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3));
 
+        var dax = 0;
         if (Math.abs(this.ddx) > 0) {
             var h = this.ddx * .00001;
             this.D += h;
-            this.Beta = Math.acos(1. - 2. * (ygvf) / this.D);
+            this.Beta = Math.acos(1 - 2 * (ygvf) / this.D);
             dax = (CircularGVF.area(this.Beta, this.D) - this.A) / 0.00001;
             this.D -= h;
-        } else
-            dax = 0;
+        }
 
-        this.Beta = Math.acos(1. - 2. * ygvf / this.D);
-        Fq = hc / (this.A * this.A) * dax;
+        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
+        var Fq = hc / (this.A * this.A) * dax;
 
-        var Sf = Math.pow(this.Q * this.n / this.c * Math.pow(this.P / this.A, 2. / 3.) / this.A, 2);
+        /* slope from mannings eq. */
+        var Sf = Math.pow(this.Q * this.n / this.c * Math.pow(this.P / this.A, 2 / 3) / this.A, 2);
         this.fr2 = this.Q * this.Q * this.T / (this.g * Math.pow(this.A, 3));
 
-        var dydx = (this.So - Sf + this.Q * this.Q * dax / (this.g * Math.pow(this.A, 3.)) - Fq) / (1 - this.fr2);
+        var dydx = (this.So - Sf + this.Q * this.Q * dax / (this.g * Math.pow(this.A, 3)) - Fq) / (1 - this.fr2);
 
         //console.log("slope = " + dydx);
         return dydx;
@@ -133,7 +130,7 @@ var CircularGVF = (function () {
         }
 
         //console.log("After " + i + " Iterations");
-        var Y = D / 2. * (1 - Math.cos(Beta));
+        var Y = D / 2 * (1 - Math.cos(Beta));
         return (Y);
     };
 
@@ -159,7 +156,7 @@ var CircularGVF = (function () {
         */
         //Initial guess at Beta
         // From Jeppsons open channel page 47.  Utah State University
-        var Qprime = n * Q / (c * Math.pow(D, 8. / 3.) * Math.sqrt(So));
+        var Qprime = n * Q / (c * Math.pow(D, 8 / 3) * Math.sqrt(So));
         var B = 2.3286 * Math.pow(Qprime, 0.244);
 
         //double A, P, F, F1, Y, m;
@@ -170,8 +167,8 @@ var CircularGVF = (function () {
             var P = B * D;
 
             //Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
-            var F = Q - c / n * Math.pow(A, 5. / 3.) * Math.sqrt(So) / Math.pow(P, 2. / 3.);
-            var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5. / 3.) * Math.sqrt(So) / Math.pow((B + .001) * D, 2. / 3.);
+            var F = Q - c / n * Math.pow(A, 5 / 3) * Math.sqrt(So) / Math.pow(P, 2 / 3);
+            var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5 / 3) * Math.sqrt(So) / Math.pow((B + .001) * D, 2 / 3);
 
             var m = (F1 - F) / (.001);
             B -= F / m;
@@ -190,7 +187,7 @@ var CircularGVF = (function () {
         }
 
         //console.log("After " + i + " Iterations");
-        var Y = D / 2. * (1 - Math.cos(B));
+        var Y = D / 2 * (1 - Math.cos(B));
         return (Y);
     };
 
@@ -204,13 +201,13 @@ var CircularGVF = (function () {
         // initial Momentum
         // console.log("Depth " + y);
         // console.log("Beta case 1 " + B1);
-        var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1, this.area(B1, D), D));
+        var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1, D));
 
         for (var Bstart = 2.5; Bstart > .1; Bstart -= .02) {
             var B = Bstart;
             for (var counter = 0; counter < 20; counter++) {
-                var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, this.area(B, D), D));
-                var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001, this.area(B + .001, D), D));
+                var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, D));
+                var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001, D));
                 var m = (Mplus - M) / (.001);
                 B -= (M - M1) / m;
                 if (B > 3.14 || B < 0)
@@ -237,9 +234,9 @@ var CircularGVF = (function () {
         var dydx = this.slope(this.x, this.y);
 
         this.vel = this.Q / this.A;
-        this.E = this.vel * this.vel / (2. * this.g) + this.y;
+        this.E = this.vel * this.vel / (2 * this.g) + this.y;
         this.Fr = Math.sqrt(this.fr2);
-        var Ahc = CircularGVF.MomentAhc(this.Beta, this.A, this.D);
+        var Ahc = CircularGVF.MomentAhc(this.Beta, this.D);
         this.fmom = CircularGVF.momentum(this.Q, this.g, this.A, Ahc);
     };
 

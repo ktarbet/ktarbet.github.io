@@ -1,3 +1,5 @@
+"use strict";
+
 class CircularGVF {
     error_condition: number;
     vel: number;
@@ -40,11 +42,11 @@ class CircularGVF {
     }
 
    static calc_beta(y:number, D:number) {
-    return (Math.acos(1. - 2. * y / D));
+    return (Math.acos(1 - 2 * y / D));
 }
 
     static area(Beta:number,D:number) {
-        return (D * D / 4. * (Beta - Math.cos(Beta) * Math.sin(Beta)));
+        return (D * D / 4 * (Beta - Math.cos(Beta) * Math.sin(Beta)));
     }
 
     static perimeter(Beta:number,D:number) {
@@ -54,12 +56,11 @@ class CircularGVF {
         return D * Math.sin(Beta);
     }
 
-    static MomentAhc(B: number, A: number, D: number) {
-        var hcA = D * D * D / 24. * (3 * Math.sin(B) - 3 * B * Math.cos(B) - Math.pow(Math.sin(B), 3.));
+    static MomentAhc(B: number,  D: number) {
+        var hcA = D * D * D / 24 * (3 * Math.sin(B) - 3 * B * Math.cos(B) - Math.pow(Math.sin(B), 3));
         return hcA;
     }
     static momentum( Q:number, g:number, A:number, Ahc:number) {
-        //    var hcA = this.D * this.D * this.D / 24. * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3.));
         return (Ahc + Q * Q / (g * A));
 
     }
@@ -71,10 +72,6 @@ class CircularGVF {
     slope(x:number,ygvf:number) {
 
         //console.log("solving for slope @x=" + x + "  and y= " +ygvf);
-        var dax: number; /* dA/dx    */
-        var hc: number;  /* height of centroid */
-        var Fq: number; /*  */
-        var Sf: number;  /* slope from mannings eq. */
 
         /*******************************/
         /* variables which vary with x */
@@ -86,7 +83,7 @@ class CircularGVF {
         //return NAN and set the global variable errno to
         //EDOM  Domain error
 
-        if (Math.abs(1. - 2. * ygvf / this.D) > 1) {
+        if (Math.abs(1 - 2 * ygvf / this.D) > 1) {
             this.error_condition = 1;
             return;
         }
@@ -99,30 +96,33 @@ class CircularGVF {
         }
 
 
-        this.Beta = Math.acos(1. - 2. * ygvf / this.D);
+        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
 
         this.A = CircularGVF.area(this.Beta,this.D);
         this.T = CircularGVF.topWidth(this.Beta, this.D);
         this.P = CircularGVF.perimeter(this.Beta,this.D);
 
-        hc = this.D * this.D * this.D / 24. * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3.));
+        /* height of centroid */
+        var hc = this.D * this.D * this.D / 24 * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3));
 
+        var dax = 0; /* dA/dx    */
         if (Math.abs(this.ddx) > 0) {
             var h = this.ddx * .00001;
             this.D += h;
-            this.Beta = Math.acos(1. - 2. * (ygvf) / this.D);
+            this.Beta = Math.acos(1 - 2 * (ygvf) / this.D);
             dax = (CircularGVF.area(this.Beta, this.D) - this.A) / 0.00001;
             this.D -= h;
         }
-        else dax = 0;
+        
 
-        this.Beta = Math.acos(1. - 2. * ygvf / this.D);
-        Fq = hc / (this.A * this.A) * dax;
+        this.Beta = Math.acos(1 - 2 * ygvf / this.D);
+        var Fq = hc / (this.A * this.A) * dax;
 
-        var Sf: number = Math.pow(this.Q * this.n / this.c * Math.pow(this.P / this.A, 2. / 3.) / this.A, 2);
+        /* slope from mannings eq. */
+        var Sf: number = Math.pow(this.Q * this.n / this.c * Math.pow(this.P / this.A, 2 / 3) / this.A, 2);
         this.fr2 = this.Q * this.Q * this.T / (this.g * Math.pow(this.A, 3));
 
-        var dydx: number = (this.So - Sf + this.Q * this.Q * dax / (this.g * Math.pow(this.A, 3.)) - Fq) / (1 - this.fr2);
+        var dydx: number = (this.So - Sf + this.Q * this.Q * dax / (this.g * Math.pow(this.A, 3)) - Fq) / (1 - this.fr2);
 
         //console.log("slope = " + dydx);
         return dydx;
@@ -170,7 +170,7 @@ class CircularGVF {
 
         }
         //console.log("After " + i + " Iterations");
-        var Y: number = D / 2. * (1 - Math.cos(Beta));
+        var Y: number = D / 2 * (1 - Math.cos(Beta));
         return (Y);
 
     }
@@ -199,7 +199,7 @@ energy line.  The possible variables and unknowns are:
 //Initial guess at Beta
 // From Jeppsons open channel page 47.  Utah State University
 
- var Qprime:number = n * Q / (c * Math.pow(D, 8. / 3.) * Math.sqrt(So));
+ var Qprime:number = n * Q / (c * Math.pow(D, 8 / 3) * Math.sqrt(So));
   var B:number = 2.3286 * Math.pow(Qprime, 0.244);
 
 //double A, P, F, F1, Y, m;
@@ -210,8 +210,8 @@ energy line.  The possible variables and unknowns are:
         var A:number = CircularGVF.area(B, D);
         var P = B * D;
         //Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
-        var F = Q - c / n * Math.pow(A, 5. / 3.) * Math.sqrt(So) / Math.pow(P, 2. / 3.);
-        var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5. / 3.) * Math.sqrt(So) / Math.pow((B + .001) * D, 2. / 3.);
+        var F = Q - c / n * Math.pow(A, 5 / 3) * Math.sqrt(So) / Math.pow(P, 2 / 3);
+        var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5 / 3) * Math.sqrt(So) / Math.pow((B + .001) * D, 2 / 3);
 
         var m = (F1 - F) / (.001);
         B -= F / m;
@@ -235,7 +235,7 @@ energy line.  The possible variables and unknowns are:
     }
 
         //console.log("After " + i + " Iterations");
-        var Y: number = D / 2. * (1 - Math.cos(B));
+        var Y: number = D / 2 * (1 - Math.cos(B));
     return (Y);
 }
 
@@ -250,15 +250,15 @@ energy line.  The possible variables and unknowns are:
      // initial Momentum
     // console.log("Depth " + y);
     // console.log("Beta case 1 " + B1);
-     var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1, this.area(B1, D), D));
+     var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1,  D));
    // console.log( "Target Momentum = "+ M1);
 
 for(var Bstart = 2.5; Bstart > .1; Bstart-=.02){
        var B = Bstart;
 for(var counter = 0; counter < 20; counter++) {
 
-            var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, this.area(B, D), D));
-            var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001, this.area(B + .001, D), D));
+            var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, D));
+            var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001,  D));
             var m = (Mplus - M) / (.001);
             B -= (M - M1) / m;
             if (B > 3.14 || B < 0)
@@ -289,9 +289,9 @@ for(var counter = 0; counter < 20; counter++) {
 
 
         this.vel = this.Q / this.A;
-        this.E = this.vel * this.vel / (2. * this.g) + this.y;
+        this.E = this.vel * this.vel / (2 * this.g) + this.y;
         this.Fr = Math.sqrt(this.fr2);
-        var Ahc: number = CircularGVF.MomentAhc(this.Beta, this.A, this.D);
+        var Ahc: number = CircularGVF.MomentAhc(this.Beta,  this.D);
         this.fmom = CircularGVF.momentum(this.Q,this.g,this.A,Ahc);
 
     }
