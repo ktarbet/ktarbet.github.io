@@ -6,17 +6,17 @@ class CircularGVF {
     E: number;
     Fr: number;// froude number
     fmom: number;
-    fr2:number; /* froude number squared */
-    y2:number; // alternate momentum depth
+    fr2: number; /* froude number squared */
+    y2: number; // alternate momentum depth
     x: number;   /* current x position */
-    dx:number;    /* delta x for solution */
-    D:number; // diameter of pipe
-    L:number;        /* length of canal section */
-    Beta:number;
+    dx: number;    /* delta x for solution */
+    D: number; // diameter of pipe
+    L: number;        /* length of canal section */
+    Beta: number;
     T: number;   /* top width */
-    P:number;   /* perimeter */
-    A:number; //area
-    c:number;	   /* c in mannings equation  SI c=1.0 ES c=1.486 */
+    P: number;   /* perimeter */
+    A: number; //area
+    c: number;	   /* c in mannings equation  SI c=1.0 ES c=1.486 */
     ddx: number;    /* partial of diameter with respect to x */
     nfirst: number; // used by solver odesol
     dxdid: number;//used by odesol
@@ -30,37 +30,37 @@ class CircularGVF {
         public Q: number,/* flow rate */
         public d1: number,   /* diameter 1 */
         public d2: number,  /* diameter 2 */
-        public steps:number,
-        public z1:number,  /* elevation */
+        public steps: number,
+        public z1: number,  /* elevation */
         public comment: String) {
-            this.error_condition = 0;
+        this.error_condition = 0;
         this.dx = (this.x2 - this.x1) / (this.steps - 1);
         this.L = Math.abs(this.x2 - this.x1);
         this.ddx = (d2 - d1) / this.L;
-            this.nfirst = 1;
-            this.dxdid = 0;
+        this.nfirst = 1;
+        this.dxdid = 0;
     }
 
-   static calc_beta(y:number, D:number) {
-    return (Math.acos(1 - 2 * y / D));
-}
+    static calc_beta(y: number, D: number) {
+        return (Math.acos(1 - 2 * y / D));
+    }
 
-    static area(Beta:number,D:number) {
+    static area(Beta: number, D: number) {
         return (D * D / 4 * (Beta - Math.cos(Beta) * Math.sin(Beta)));
     }
 
-    static perimeter(Beta:number,D:number) {
+    static perimeter(Beta: number, D: number) {
         return Beta * D;
     }
-    static topWidth(Beta:number,D:number) {
+    static topWidth(Beta: number, D: number) {
         return D * Math.sin(Beta);
     }
 
-    static MomentAhc(B: number,  D: number) {
+    static MomentAhc(B: number, D: number) {
         var hcA = D * D * D / 24 * (3 * Math.sin(B) - 3 * B * Math.cos(B) - Math.pow(Math.sin(B), 3));
         return hcA;
     }
-    static momentum( Q:number, g:number, A:number, Ahc:number) {
+    static momentum(Q: number, g: number, A: number, Ahc: number) {
         return (Ahc + Q * Q / (g * A));
 
     }
@@ -69,7 +69,7 @@ class CircularGVF {
     // determine slope dy/dx at the x position with water depth y
     // slope is called by the solver 'odesol'
     // sets error_condition, and returns slope
-    slope(x:number,ygvf:number) {
+    slope(x: number, ygvf: number) {
 
         //console.log("solving for slope @x=" + x + "  and y= " +ygvf);
 
@@ -96,11 +96,11 @@ class CircularGVF {
         }
 
         this.Beta = CircularGVF.calc_beta(ygvf, this.D);
-        this.A = CircularGVF.area(this.Beta,this.D);
+        this.A = CircularGVF.area(this.Beta, this.D);
         this.T = CircularGVF.topWidth(this.Beta, this.D);
-        this.P = CircularGVF.perimeter(this.Beta,this.D);
+        this.P = CircularGVF.perimeter(this.Beta, this.D);
 
-        
+
         var dax = 0, /* dA/dx    */
             /* height of centroid */
             hc = this.D * this.D * this.D / 24 * (3 * Math.sin(this.Beta) - 3 * this.Beta * Math.cos(this.Beta) - Math.pow(Math.sin(this.Beta), 3)),
@@ -111,7 +111,7 @@ class CircularGVF {
         if (Math.abs(this.ddx) > 0) {
             dax = (CircularGVF.area(Beta2, this.D) - this.A) / 0.00001;
         }
-        
+
         var Fq = hc / (this.A * this.A) * dax;
 
         /* slope from mannings eq. */
@@ -159,8 +159,8 @@ class CircularGVF {
             }
 
             if (Math.abs(F) < 0.001) {
-               // console.log("F = " + F);
-              //  console.log("After " + i + " Iterations");
+                // console.log("F = " + F);
+                //  console.log("After " + i + " Iterations");
                 break;
             }
 
@@ -174,124 +174,123 @@ class CircularGVF {
     /*********************************************************
     Use Mannings Equation to find Normal Depth
     *********************************************************/
-   static normal(Q:number, So:number, D:number, n:number, c:number){
-/* returns -->  y = depth of flow,
+    static normal(Q: number, So: number, D: number, n: number, c: number) {
+        /* returns -->  y = depth of flow,
 
-If Normal Depth is not possible
-//??returns --> 0  When Solving for Qn < Q(input) for y=D
+        If Normal Depth is not possible
+        //??returns --> 0  When Solving for Qn < Q(input) for y=D
 
-Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
+        Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
 
-  and C=1.486 for ES units, n is the channel roughness coefficient,
-A = cross-sectional area, P is the wetted perimeter, and S = slope of
-energy line.  The possible variables and unknowns are:
+          and C=1.486 for ES units, n is the channel roughness coefficient,
+        A = cross-sectional area, P is the wetted perimeter, and S = slope of
+        energy line.  The possible variables and unknowns are:
 
-  D = diameter of circular channels,
-  Q = flowrate in cfs or cubic meter per second for ES or SI units,
-  n = channel roughness coefficient, and
-  S = slope of energy line.
-*/
+          D = diameter of circular channels,
+          Q = flowrate in cfs or cubic meter per second for ES or SI units,
+          n = channel roughness coefficient, and
+          S = slope of energy line.
+        */
 
-//Initial guess at Beta
-// From Jeppsons open channel page 47.  Utah State University
+        //Initial guess at Beta
+        // From Jeppsons open channel page 47.  Utah State University
 
- var Qprime:number = n * Q / (c * Math.pow(D, 8 / 3) * Math.sqrt(So));
-  var B:number = 2.3286 * Math.pow(Qprime, 0.244);
+        var Qprime: number = n * Q / (c * Math.pow(D, 8 / 3) * Math.sqrt(So));
+        var B: number = 2.3286 * Math.pow(Qprime, 0.244);
 
-//double A, P, F, F1, Y, m;
- var i:number;
-    //int nFailed=0;
-    //cout << " Beta " << B;
-    for (i = 0; i < 50; i++) { // max iterations
-        var A:number = CircularGVF.area(B, D);
-        var P = B * D;
-        //Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
-        var F = Q - c / n * Math.pow(A, 5 / 3) * Math.sqrt(So) / Math.pow(P, 2 / 3);
-        var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5 / 3) * Math.sqrt(So) / Math.pow((B + .001) * D, 2 / 3);
+        //double A, P, F, F1, Y, m;
+        var i: number;
+        //int nFailed=0;
+        //cout << " Beta " << B;
+        for (i = 0; i < 50; i++) { // max iterations
+            var A: number = CircularGVF.area(B, D);
+            var P = B * D;
+            //Q = C/n (A**5/3)(S**1/2)/(P**2/3)  in which C=1 for SI units
+            var F = Q - c / n * Math.pow(A, 5 / 3) * Math.sqrt(So) / Math.pow(P, 2 / 3);
+            var F1 = Q - c / n * Math.pow(CircularGVF.area(B + .001, D), 5 / 3) * Math.sqrt(So) / Math.pow((B + .001) * D, 2 / 3);
 
-        var m = (F1 - F) / (.001);
-        B -= F / m;
-        //cout << " B " << B;
+            var m = (F1 - F) / (.001);
+            B -= F / m;
+            //cout << " B " << B;
 
-        if (B > 3.14 || B < 0) {
-            return D;
-            //      break;
-            //        nFailed++;
-            //       B=nFailed*.05;
-            //      cerr <<" "<<i<<" Beta reset ="<<B<<endl;
+            if (B > 3.14 || B < 0) {
+                return D;
+                //      break;
+                //        nFailed++;
+                //       B=nFailed*.05;
+                //      cerr <<" "<<i<<" Beta reset ="<<B<<endl;
+
+            }
+
+            if (Math.abs(F) < 0.001) {
+                //console.log("F = " + F);
+                // console.log("After " + i + " Iterations");
+                break;
+            }
 
         }
-
-        if (Math.abs(F) < 0.001) {
-            //console.log("F = " + F);
-           // console.log("After " + i + " Iterations");
-            break;
-        }
-
-    }
 
         //console.log("After " + i + " Iterations");
         var Y: number = D / 2 * (1 - Math.cos(B));
-    return (Y);
-}
-
-
- // based on current value of y,
-// find conjugate depth y2
-    // use newton method.
- static MomentumDepth2(y:number, D:number, g:number, Q:number){
-
-// Trial..
-     var B1 = CircularGVF.calc_beta(y, D); // initial Beta
-     // initial Momentum
-    // console.log("Depth " + y);
-    // console.log("Beta case 1 " + B1);
-     var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1,  D));
-   // console.log( "Target Momentum = "+ M1);
-
-for(var Bstart = 2.5; Bstart > .1; Bstart-=.02){
-       var B = Bstart;
-for(var counter = 0; counter < 20; counter++) {
-
-            var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, D));
-            var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001,  D));
-            var m = (Mplus - M) / (.001);
-            B -= (M - M1) / m;
-            if (B > 3.14 || B < 0)
-                break;
-            if (Math.abs(M - M1) < 0.001)
-                break;
-        }
-
-        if (Math.abs(M - M1) < 0.001 && Math.abs(B1 - B) > 0.001) {
-            //console.log( "found convergence" );
-            //console.log("M = " + M);
-          //  console.log( "B = " + B );
-            // double tmpy=D/2.*(1-cos(B));
-            // double tmpB=Beta(tmpy,D); //
-            //  cout <<"tmp B "<<tmpB<<endl;
-            return (D / 2. * (1 - Math.cos(B)));
-        }
+        return (Y);
     }
-    console.log("failed to find Another B");
-    return 0;
-}
+
+
+    // based on current value of y,
+    // find conjugate depth y2
+    // use newton method.
+    static MomentumDepth2(y: number, D: number, g: number, Q: number) {
+
+        // Trial..
+        var B1 = CircularGVF.calc_beta(y, D); // initial Beta
+        // initial Momentum
+        // console.log("Depth " + y);
+        // console.log("Beta case 1 " + B1);
+        var M1 = CircularGVF.momentum(Q, g, this.area(B1, D), CircularGVF.MomentAhc(B1, D));
+        // console.log( "Target Momentum = "+ M1);
+
+        for (var Bstart = 2.5; Bstart > .1; Bstart -= .02) {
+            var B = Bstart;
+            for (var counter = 0; counter < 20; counter++) {
+
+                var M = this.momentum(Q, g, this.area(B, D), this.MomentAhc(B, D));
+                var Mplus = this.momentum(Q, g, this.area(B + .001, D), this.MomentAhc(B + .001, D));
+                var m = (Mplus - M) / (.001);
+                B -= (M - M1) / m;
+                if (B > 3.14 || B < 0)
+                    break;
+                if (Math.abs(M - M1) < 0.001)
+                    break;
+            }
+
+            if (Math.abs(M - M1) < 0.001 && Math.abs(B1 - B) > 0.001) {
+                //console.log( "found convergence" );
+                //console.log("M = " + M);
+                //  console.log( "B = " + B );
+                // double tmpy=D/2.*(1-cos(B));
+                // double tmpB=Beta(tmpy,D); //
+                //  cout <<"tmp B "<<tmpB<<endl;
+                return (D / 2. * (1 - Math.cos(B)));
+            }
+        }
+        console.log("failed to find Another B");
+        return 0;
+    }
 
 
 
 
     update() {
-        var dydx: number = this.slope(this.x, this.y);
 
-
+        var dydx = this.slope(this.x, this.y); // updates A, Beta, etc
         this.vel = this.Q / this.A;
         this.E = this.vel * this.vel / (2 * this.g) + this.y;
         this.Fr = Math.sqrt(this.fr2);
-        var Ahc: number = CircularGVF.MomentAhc(this.Beta,  this.D);
-        this.fmom = CircularGVF.momentum(this.Q,this.g,this.A,Ahc);
+        var Ahc: number = CircularGVF.MomentAhc(this.Beta, this.D);
+        this.fmom = CircularGVF.momentum(this.Q, this.g, this.A, Ahc);
 
     }
-
+ 
     /********************************************************/
     // Ordinary differential equations solver Roland Jeppson
     // Returns zero on Error
@@ -301,39 +300,39 @@ for(var counter = 0; counter < 20; counter++) {
 
     // ybeg is input as  y(x1)
     // ybeg is modified at the end of solution to represent y(x2)  and returned
-    odesolc(ybeg:number, x1:number, x2:number):number
+    odesolc(ybeg: number, x1: number, x2: number): number
     // double err, double h1,double hmin,int nstor)
     {
         "use strict";
-    // HACK warnings..  the slope function called by this
-    // expects a signature slope(number,number).
-    // original code was  slope(number,number[]) .. 
-    // some code hacked like this ydummy[0] , because  nv=1 (number of values)
-    // trying to minimize changes for comparison/debugging to original C code.
-	var err = 0.001;
-	var h1 = 0.1;
-	var hmin = 0.001;
-//     int nstor=1;
+        // HACK warnings..  the slope function called by this
+        // expects a signature slope(number,number).
+        // original code was  slope(number,number[]) .. 
+        // some code hacked like this ydummy[0] , because  nv=1 (number of values)
+        // trying to minimize changes for comparison/debugging to original C code.
+        var err = 0.001;
+        var h1 = 0.1;
+        var hmin = 0.001;
+        //     int nstor=1;
 
-var dxbetw = 0.000001;
-var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
+        var dxbetw = 0.000001;
+        var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
 
-	var  i=0, j=0, ji=0, k=0, kk=0, mmn=0, n=0, nstp=0, ntries=0, ntries1=0, nbetw1=0;
-	var nseq  = [2,4,6,8,12,16,24,32,48,64,96 ];
+        var i = 0, j = 0, ji = 0, k = 0, kk = 0, mmn = 0, n = 0, nstp = 0, ntries = 0, ntries1 = 0, nbetw1 = 0;
+        var nseq = [2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96];
 
         var xp: number[] = [0];
         var yp: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        var wk1: number[] = [0,0,0,0,0,0,0,0,0,0,0,0,0];
-        var dydx:number[] = [0];
+        var wk1: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var dydx: number[] = [0];
         var xz1: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        var fx: number[] = [0,0,0,0,0,0,0];
-        var ydumy: number[]  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        var dydumy: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+        var fx: number[] = [0, 0, 0, 0, 0, 0, 0];
+        var ydumy: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var dydumy: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 
-		var bbb, binter, cc1c, dumyx = 0, dvv, dxsta, errorm, h, h2, hdid, he;
+        var bbb, binter, cc1c, dumyx = 0, dvv, dxsta, errorm, h, h2, hdid, he;
 
-		var x=0, x1x=0, xbetw=0, xest=0, xsign=0, yente=0, ystor=0;
+        var x = 0, x1x = 0, xbetw = 0, xest = 0, xsign = 0, yente = 0, ystor = 0;
 
 
         ntries = 7;
@@ -341,7 +340,7 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
         nbetw1 = nbetw - 1;
         xsign = x2 - x1;
         x = x1;
-        if (this.nfirst===1) {
+        if (this.nfirst === 1) {
             if (xsign < 0) dxsta = -Math.abs(h1);
             else dxsta = Math.abs(h1);
 
@@ -364,7 +363,7 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
         for (nstp = 1; nstp < 10000; nstp++) {
 
             dydx[0] = this.slope(x, wk1[0]);
-            
+
             if (this.error_condition === 1) {
                 return 0;
             }
@@ -403,13 +402,13 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
                     }
                     x1x = xbetw + he;
                     dydumy[0] = this.slope(x1x, ydumy[0]);
-                    if (this.error_condition ===1) {
+                    if (this.error_condition === 1) {
                         return 0;
                     }
 
 
                     h2 = 2. * he;
-                    mmn = Math.round( nseq[i]);
+                    mmn = Math.round(nseq[i]);
                     for (n = 1; n < mmn; n++) {
 
                         for (ji = 0; ji < nv; ji++) {
@@ -418,8 +417,8 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
                             ydumy[ji] = ystor;
                         }
                         x1x = x1x + he;
-                        dydumy[0]= this.slope(x1x, ydumy[0]);
-                        if (this.error_condition===1) {
+                        dydumy[0] = this.slope(x1x, ydumy[0]);
+                        if (this.error_condition === 1) {
                             return 0;
                         }
 
@@ -509,7 +508,7 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
             }
 
             if (Math.abs(this.dxdid) < hmin) {
-                console.log( "\nincrement<min.");
+                console.log("\nincrement<min.");
                 this.error_condition = 1;
                 return (0);
 
@@ -525,17 +524,8 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
 
     } /* odesolc */
 
-    solve() {
-        var ygvf: number;
-        var xz: number;	   /* new positon of x   */
-        var z: number;
-        var rval = [];
-        this.x = this.x1;
-        this.c = 1; //s.i. units
-        if (this.g > 30)
-            this.c = 1.486; // english units
-        this.D = this.d1;
-        ygvf = this.y;
+
+    printStartingCondition() {
         console.log("#gradually varied open channel flow");
         console.log("#y=" + this.y);
         console.log("#x1= " + this.x1);
@@ -550,78 +540,74 @@ var ngood = 0, nbad = 0, nbetw = 0, ibetw = 0 /*,nstor=1 */, nv = 1;
         console.log("#d2= " + this.d2);
         console.log("#ddx= " + this.ddx);
         console.log("#g  = " + this.g);
-        this.update();
-        /*
-         X       Y      y/D     yn Beta  Area    E      M       V       Fr    Z     H        D      y2     abs(y2-y)
-           0.0   3.61   0.48   ?.?? 1.53  21.04   6.77   164.98  14.26   1.50 100.00 106.77   7.50   5.47   1.86
-        */
-        //douuble Qmax=flow(So,D,n,c,d1);
-        var yn: number = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-        var yc: number = CircularGVF.critical(this.Q, this.D, this.g);
-
-
-        console.log("#yc  =" + yc + "(Critical Depth) for D= " + this.D);
-        console.log("#yn  =" + yn + " (Normal Depth) for D= " + this.D);
-        if (Math.abs(this.d1 - this.d2) > 0.01) {
-            //console.log("at end of pipe (different diameter) D=" + this.d2);
-            //yn = CircularGVF.normal(this.Q, this.So, this.d2, this.n, this.c);
-            //yc = CircularGVF.critical(this.Q, this.d2, this.g);
-        }
-        var results = { resultTable: [], columnHeader: [] };
-        results.columnHeader = ["X","Y","y/D","yn","Beta","Area","E","M","V","Fr","Z","H","D","y2","abs(y2-y)","yc"];
-      
         console.log("\n X       Y      y/D      yn   Beta  Area    E      M       V       Fr    Z     H        D      y2     abs(y2-y)  yc");
         console.log(this.comment);
-        z = this.z1;
+    }
 
-        var y2: number = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
-        yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-        yc = CircularGVF.critical(this.Q, this.D, this.g);
+    updateResults(results,ygvf,yn,y2,z,yc) {
 
-        console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " +
-            this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) +
-            " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
+            console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " +
+                this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) +
+                " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
+            var row = [this.x, ygvf, (ygvf / this.D), yn, this.Beta, this.A,
+                this.E, this.fmom, this.vel, this.Fr, z, (z + this.E),
+                this.D, y2, Math.abs(y2 - this.y), yc];
 
-
-
-        if (this.error_condition === 1) {
-            //fclose(fp);
-            return 0;
+            results.resultTable.push(row);
         }
 
-        /* GVF profile calculations between  */
-for(var istep = 0; istep < (this.steps - 1); istep++) {
+    solve() {
+        var ygvf: number;
+        var xz: number;	   /* new positon of x   */
+        var z: number;
+        var rval = [];
+        this.x = this.x1;
+        this.c = 1; //s.i. units
+        if (this.g > 30)
+            this.c = 1.486; // english units
+        this.D = this.d1;
+        ygvf = this.y;
+      
+        this.printStartingCondition();
+        
 
-    xz = this.x + this.dx;
-    console.log("xz=" + xz);
-    z = (this.x1 - xz) * this.So + this.z1;
-    if (this.error_condition === 0) {
-        ygvf = this.odesolc(ygvf, this.x, xz);
-        console.log("ygvf= " + ygvf);
-    }
-    else {
-        return 0;
-    }
+        var results = { resultTable: [], columnHeader: [] };
+        results.columnHeader = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
+        
+        z = this.z1;
+       
+        /* GVF profile calculations between  */
+        for (var istep = 0; istep < this.steps; istep++) {
+
+           var y2 = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
+           var yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
+            var yc = CircularGVF.critical(this.Q, this.D, this.g);
+            if (this.error_condition === 1) {
+                return 0;
+            }
+            this.update(); // update some variables  
+            this.updateResults(results, ygvf, yn, y2, z,yc);
+
+            if (istep === this.steps) {
+                break;
+            }
+
+            xz = this.x + this.dx;
+            console.log("xz=" + xz);
+            z = (this.x1 - xz) * this.So + this.z1;
+            if (this.error_condition === 0) {
+                ygvf = this.odesolc(ygvf, this.x, xz);
+                console.log("ygvf= " + ygvf);
+            }
+            else {
+                return 0;
+            }
 
             this.x = xz;
             this.y = ygvf;
             this.update();
 
-    y2 = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
-            //yn=normal(Q,So,d2,n,c);
-    yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-    yc = CircularGVF.critical(this.Q, this.D, this.g);
-
-    console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " +
-        this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) +
-        " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
-    var row = [this.x , ygvf , (ygvf / this.D) , yn , this.Beta , this.A ,
-        this.E , this.fmom , this.vel , this.Fr , z , (z + this.E), 
-         this.D , y2 , Math.abs(y2 - this.y) , yc];
-
-    results.resultTable.push(row);
-            //fprintf(fp, "\n%6.1f %6.2f %6.2f %6.2f %6.2f %6.2f %6.2f %8.2f %6.2f %6.2f %6.2f %6.2f %6.2f %6.2f %6.2f %6.2f", x, ygvf[0], ygvf[0] / D, yn, Beta, A, E, fmom, vel, Fr, z, z + E, D, y2, fabs(y2 - y), yc);
-
+           
             if ((ygvf / yn) < 0.1)
                 this.error_condition = 1;
 
@@ -632,6 +618,7 @@ for(var istep = 0; istep < (this.steps - 1); istep++) {
         }// while (rep);
         return results;
     }
+  
 }
 
 

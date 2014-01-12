@@ -224,7 +224,6 @@ var CircularGVF = (function () {
 
     CircularGVF.prototype.update = function () {
         var dydx = this.slope(this.x, this.y);
-
         this.vel = this.Q / this.A;
         this.E = this.vel * this.vel / (2 * this.g) + this.y;
         this.Fr = Math.sqrt(this.fr2);
@@ -458,17 +457,7 @@ else
         return (0);
     };
 
-    CircularGVF.prototype.solve = function () {
-        var ygvf;
-        var xz;
-        var z;
-        var rval = [];
-        this.x = this.x1;
-        this.c = 1;
-        if (this.g > 30)
-            this.c = 1.486;
-        this.D = this.d1;
-        ygvf = this.y;
+    CircularGVF.prototype.printStartingCondition = function () {
         console.log("#gradually varied open channel flow");
         console.log("#y=" + this.y);
         console.log("#x1= " + this.x1);
@@ -483,42 +472,67 @@ else
         console.log("#d2= " + this.d2);
         console.log("#ddx= " + this.ddx);
         console.log("#g  = " + this.g);
-        this.update();
+        console.log("\n X       Y      y/D      yn   Beta  Area    E      M       V       Fr    Z     H        D      y2     abs(y2-y)  yc");
+        console.log(this.comment);
+    };
 
-        /*
-        X       Y      y/D     yn Beta  Area    E      M       V       Fr    Z     H        D      y2     abs(y2-y)
-        0.0   3.61   0.48   ?.?? 1.53  21.04   6.77   164.98  14.26   1.50 100.00 106.77   7.50   5.47   1.86
-        */
-        //douuble Qmax=flow(So,D,n,c,d1);
-        var yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-        var yc = CircularGVF.critical(this.Q, this.D, this.g);
+    CircularGVF.prototype.updateResults = function (results, ygvf, yn, y2, z, yc) {
+        console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " + this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) + " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
+        var row = [
+            this.x,
+            ygvf,
+            (ygvf / this.D),
+            yn,
+            this.Beta,
+            this.A,
+            this.E,
+            this.fmom,
+            this.vel,
+            this.Fr,
+            z,
+            (z + this.E),
+            this.D,
+            y2,
+            Math.abs(y2 - this.y),
+            yc
+        ];
 
-        console.log("#yc  =" + yc + "(Critical Depth) for D= " + this.D);
-        console.log("#yn  =" + yn + " (Normal Depth) for D= " + this.D);
-        if (Math.abs(this.d1 - this.d2) > 0.01) {
-            //console.log("at end of pipe (different diameter) D=" + this.d2);
-            //yn = CircularGVF.normal(this.Q, this.So, this.d2, this.n, this.c);
-            //yc = CircularGVF.critical(this.Q, this.d2, this.g);
-        }
+        results.resultTable.push(row);
+    };
+
+    CircularGVF.prototype.solve = function () {
+        var ygvf;
+        var xz;
+        var z;
+        var rval = [];
+        this.x = this.x1;
+        this.c = 1;
+        if (this.g > 30)
+            this.c = 1.486;
+        this.D = this.d1;
+        ygvf = this.y;
+
+        this.printStartingCondition();
+
         var results = { resultTable: [], columnHeader: [] };
         results.columnHeader = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
 
-        console.log("\n X       Y      y/D      yn   Beta  Area    E      M       V       Fr    Z     H        D      y2     abs(y2-y)  yc");
-        console.log(this.comment);
         z = this.z1;
 
-        var y2 = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
-        yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-        yc = CircularGVF.critical(this.Q, this.D, this.g);
+        for (var istep = 0; istep < this.steps; istep++) {
+            var y2 = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
+            var yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
+            var yc = CircularGVF.critical(this.Q, this.D, this.g);
+            if (this.error_condition === 1) {
+                return 0;
+            }
+            this.update();
+            this.updateResults(results, ygvf, yn, y2, z, yc);
 
-        console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " + this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) + " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
+            if (istep === this.steps) {
+                break;
+            }
 
-        if (this.error_condition === 1) {
-            //fclose(fp);
-            return 0;
-        }
-
-        for (var istep = 0; istep < (this.steps - 1); istep++) {
             xz = this.x + this.dx;
             console.log("xz=" + xz);
             z = (this.x1 - xz) * this.So + this.z1;
@@ -532,34 +546,6 @@ else
             this.x = xz;
             this.y = ygvf;
             this.update();
-
-            y2 = CircularGVF.MomentumDepth2(this.y, this.D, this.g, this.Q);
-
-            //yn=normal(Q,So,d2,n,c);
-            yn = CircularGVF.normal(this.Q, this.So, this.D, this.n, this.c);
-            yc = CircularGVF.critical(this.Q, this.D, this.g);
-
-            console.log(this.x + " " + ygvf + " " + (ygvf / this.D) + " " + yn + " " + this.Beta + " " + this.A + " " + this.E + " " + this.fmom + " " + this.vel + " " + this.Fr + " " + z + " " + (z + this.E) + " " + this.D + " " + y2 + " " + Math.abs(y2 - this.y) + " " + yc);
-            var row = [
-                this.x,
-                ygvf,
-                (ygvf / this.D),
-                yn,
-                this.Beta,
-                this.A,
-                this.E,
-                this.fmom,
-                this.vel,
-                this.Fr,
-                z,
-                (z + this.E),
-                this.D,
-                y2,
-                Math.abs(y2 - this.y),
-                yc
-            ];
-
-            results.resultTable.push(row);
 
             if ((ygvf / yn) < 0.1)
                 this.error_condition = 1;

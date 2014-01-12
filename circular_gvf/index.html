@@ -72,18 +72,18 @@ $('#runForward').on('click', function () {
         var gvf = new CircularGVF(g, y1, x1, x2, n, slope, q, diameter1, diameter2, steps, z1, "sec1");
           r = gvf.solve();
         if (rowIndex === 0) {
-           // tableOutput = r.resultTable;
+           tableOutput = r.resultTable;
              
             break;
         }
         else {
-            //tableOutput.push(r.resultTable);
+            tableOutput.push(r.resultTable);
         }
        
     }
 
     $('#divResults').handsontable({
-        data: r.resultTable,
+        data: tableOutput,
         minSpareRows: 0,
         columns: getColumnStyle(colNames),
         colHeaders: colNames,
