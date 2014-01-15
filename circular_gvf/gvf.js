@@ -515,6 +515,7 @@ else
         this.printStartingCondition();
 
         var results = { resultTable: [], columnHeader: [] };
+
         results.columnHeader = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
 
         z = this.z1;

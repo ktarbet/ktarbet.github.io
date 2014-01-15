@@ -572,6 +572,7 @@ class CircularGVF {
         
 
         var results = { resultTable: [], columnHeader: [] };
+
         results.columnHeader = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
         
         z = this.z1;
@@ -606,7 +607,6 @@ class CircularGVF {
             this.x = xz;
             this.y = ygvf;
             this.update();
-
            
             if ((ygvf / yn) < 0.1)
                 this.error_condition = 1;

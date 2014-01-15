@@ -52,35 +52,39 @@
     contextMenu: ['row_above', 'row_below', 'remove_row']
   });
 
-$('#runForward').on('click', function () {
-    var tableData = $('#div1').handsontable('getData');
-    var g = parseFloat($('#gravity').val());
-    var q = parseFloat($('#flow').val());
-    var z1 = parseFloat($('#z1').val());
-    var tableOutput = [];
-    var colNames = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
-    var r = {};
-    for (var rowIndex = 0; rowIndex < tableData.length; rowIndex++) {
-        var diameter1 = parseFloat(tableData[rowIndex][0]);
-        var diameter2 = parseFloat(tableData[rowIndex][1])
-        var slope = parseFloat(tableData[rowIndex][2]);
-        var n = parseFloat(tableData[rowIndex][3]);
-        var y1 = parseFloat(tableData[rowIndex][4]);
-        var x1 = parseFloat(tableData[rowIndex][5]);
-        var x2 = parseFloat(tableData[rowIndex][6]);
-        var steps = parseFloat(tableData[rowIndex][7]);
-        var gvf = new CircularGVF(g, y1, x1, x2, n, slope, q, diameter1, diameter2, steps, z1, "sec1");
+  $('#runForward').on('click', function () {
+      var tableData = $('#div1').handsontable('getData');
+      var g = parseFloat($('#gravity').val());
+      var q = parseFloat($('#flow').val());
+      var z1 = parseFloat($('#z1').val());
+      var tableOutput = [];
+      var colNames = ["X", "Y", "y/D", "yn", "Beta", "Area", "E", "M", "V", "Fr", "Z", "H", "D", "y2", "abs(y2-y)", "yc"];
+      var r = {};
+      for (var rowIndex = 0; rowIndex < tableData.length; rowIndex++) {
+          var diameter1 = parseFloat(tableData[rowIndex][0]);
+          var diameter2 = parseFloat(tableData[rowIndex][1])
+          var slope = parseFloat(tableData[rowIndex][2]);
+          var n = parseFloat(tableData[rowIndex][3]);
+          var y1 = parseFloat(tableData[rowIndex][4]);
+
+          if (rowIndex != 0) {
+              y1 = r.resultTable[r.resultTable.length - 1][1];
+          }
+          var x1 = parseFloat(tableData[rowIndex][5]);
+          var x2 = parseFloat(tableData[rowIndex][6]);
+          var steps = parseFloat(tableData[rowIndex][7]);
+          var gvf = new CircularGVF(g, y1, x1, x2, n, slope, q, diameter1, diameter2, steps, z1, "sec1");
           r = gvf.solve();
-        if (rowIndex === 0) {
-           tableOutput = r.resultTable;
-             
-           // break;
-        }
-        else {
-            tableOutput.push(r.resultTable);
-        }
-       
-    }
+          if (rowIndex === 0) {
+              tableOutput = r.resultTable;
+          }
+          else {
+              for (var i = 0; i < r.resultTable.length; i++) {
+                  tableOutput.push(r.resultTable[i]);
+              }
+          }
+
+      }
 
     $('#divResults').handsontable({
         data: tableOutput,
