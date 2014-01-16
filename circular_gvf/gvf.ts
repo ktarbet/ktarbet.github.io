@@ -1,5 +1,9 @@
 "use strict";
 
+// Karl Tarbet   January 2014
+// Gradually Varied Flow in Circular Pipe
+//
+
 class CircularGVF {
     error_condition: number;
     vel: number;
