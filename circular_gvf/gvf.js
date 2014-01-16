@@ -1,7 +1,7 @@
 "use strict";
 // Karl Tarbet   January 2014
 // Gradually Varied Flow in Circular Pipe
-//
+// ktarbet@gmail.com
 var CircularGVF = (function () {
     function CircularGVF(g, y, x1, x2, n, So, Q, d1, d2, steps, z1, comment) {
         this.g = g;

@@ -2,7 +2,7 @@
 
 // Karl Tarbet   January 2014
 // Gradually Varied Flow in Circular Pipe
-//
+// ktarbet@gmail.com
 
 class CircularGVF {
     error_condition: number;
