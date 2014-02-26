@@ -1,0 +1,337 @@
+@charset "UTF-8";
+#Container {
+	width: 1624px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(images/container-back-blue-fade.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	min-height: 2400px;
+}
+#LeftStrip  {
+	width: 300px;
+	height: 2400px;
+	float: left;
+}
+#TopBar {
+	height: 100px;
+	width: 1024px;
+	float: left;
+	background-image: url(images/top-bar-transparent.png);
+}
+#TopNavBar {
+	height: 35px;
+	width: 1024px;
+	float: left;
+}
+#TopNavBar #Home {
+	width: 105px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #About {
+	float: left;
+	width: 105px;
+	height: 35px;
+}
+#TopNavBar #Videos {
+	width: 105px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #Speaking {
+	float: left;
+	width: 125px;
+	height: 35px;
+}
+#TopNavBar #Booking {
+	width: 120px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #Testimonials {
+	width: 165px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #Contact {
+	width: 125px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #Shop {
+	width: 80px;
+	height: 35px;
+	float: left;
+}
+#TopNavBar #TopNavEmptySpace {
+	width: 94px;
+	height: 35px;
+	float: left;
+	background-image: url(images/top-nav-menu-emptyspace.jpg);
+}
+#Header {
+	height: 425px;
+	width: 1024px;
+	float: left;
+	background-image: url(images/header.jpg);
+}
+#LowNavBar {
+	height: 25px;
+	text-align: left;
+	float: left;
+	width: 1024px;
+}
+#LowNavBar #SpacerFill {
+	width: 695px;
+	height: 25px;
+	float: left;
+	background-image: url(images/low-nav-emptyspace.jpg);
+}
+#LowNavBar #Bio {
+	width: 50px;
+	height: 25px;
+	float: left;
+}
+#LowNavBar #Origin {
+	width: 60px;
+	height: 25px;
+	float: left;
+}
+#LowNavBar #History {
+	width: 75px;
+	height: 25px;
+	float: left;
+}
+#LowNavBar #Powers {
+	width: 75px;
+	height: 25px;
+	float: left;
+}
+#LowNavBar #Alias {
+	width: 69px;
+	height: 25px;
+	float: left;
+}
+#LeftMainContentArea {
+	width: 655px;
+	min-height: 507px;
+	float: left;
+	padding-top: 13px;
+	padding-left: 25px;
+	background-image: url(images/left-main-area-words.jpg);
+}
+#RightSideContentArea {
+	width: 344px;
+	float: left;
+	min-height: 235px;
+	background-image: url(images/imagearea-logohead.jpg);
+}
+#RightSideLowerContect {
+	width: 319px;
+	float: left;
+	padding-top: 20px;
+	padding-left: 25px;
+	background-image: url(images/right-lower-textarea.jpg);
+	height: 265px;
+}
+#ExpandableArea {
+	width: 999px;
+	float: left;
+	min-height: 99px;
+	padding-left: 25px;
+	background-image: url(images/expandable-area.jpg);
+}
+#BottomTextStrip {
+	width: 1024px;
+	height: 20px;
+	float: left;
+	background-image: url(images/bottom-text-strip.jpg);
+}
+#FooterLeft {
+	height: 77px;
+	width: 313px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#FooterLeft #Email {
+	height: 77px;
+	width: 64px;
+	float: left;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#FooterLeft #Youtube {
+	width: 60px;
+	height: 77px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#FooterLeft #Twitter {
+	float: left;
+	width: 62px;
+	height: 77px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#FooterLeft #Facebook {
+	height: 77px;
+	width: 62px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#FooterLeft #Google {
+	float: left;
+	width: 65px;
+	height: 77px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#FooterRight {
+	float: left;
+	width: 682px;
+	height: 33px;
+	background-image: url(images/footer-right.jpg);
+	padding-top: 29px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+}
+#BottomInfoArea {
+	width: 1024px;
+	height: 44px;
+	float: left;
+	background-color: #000000;
+}
+#TheAlejCorp {
+	width: 1024px;
+	height: 22px;
+	background-color: rgba(255,255,255,1.00);
+	margin-bottom: 50px;
+	float: left;
+	text-align: right;
+	padding-top: 3px;
+}
+.FooterText {
+	color: rgba(255,255,255,1.00);
+	font-size: 12pt;
+	text-align: left;
+	font-family: Arial, Helvetica;
+}
+.FooterTextBlueDot {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+}
+.AlejCorpText {
+	color: rgba(0,0,0,1.00);
+	font-size: 9pt;
+	font-family: Arial, Helvetica;
+}
+.MainBodyText {
+	color: rgba(255,255,255,1.00);
+	font-family: Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: normal;
+	font-style: normal;
+}
+.MainBodyTextBold {
+	color: rgba(185,185,185,1.00);
+	font-size: 12pt;
+	font-family: Arial, Helvetica;
+	font-weight: bold;
+}
+.MainTitle {
+	color: rgba(32,62,209,1.00);
+	font-style: italic;
+	font-family: Arial, Helvetica;
+	font-size: 24pt;
+	font-weight: bolder;
+}
+.MainSubTitle {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-style: italic;
+	font-size: 21pt;
+	font-weight: normal;
+}
+.MainSubTitleSubHeading {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 17pt;
+}
+.SecodarySubTitleGrey {
+	color: rgba(185,185,185,1.00);
+	font-family: Arial, Helvetica;
+	font-style: italic;
+	font-size: 16pt;
+	font-weight: bold;
+}
+.TestimonialCredit {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: right;
+}
+.BlueDotClients {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-size: 12pt;
+}
+.VideoTitle {
+	color: rgba(32,62,209,1.00);
+	font-family: Arial, Helvetica;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 15pt;
+}
+.VideoSubTitle {
+	color: rgba(255,255,255,1.00);
+	font-family: Arial, Helvetica;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 12pt;
+}
