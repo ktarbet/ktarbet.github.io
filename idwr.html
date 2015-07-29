@@ -1,10 +1,9 @@
-div1TYPE html>
 <html lang="en">
 <head>
 </head>
 
 <body>
- 
+ <div id='div1'></div>
  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" >
   
@@ -12,15 +11,19 @@ div1TYPE html>
     url: 'shifts.htm',
     type: "GET",
     dataType: 'html',
-    success: function(data){
-        var total = $(data).find('li').length;
-        console.log(total);
+    success: function(response){
+        
+        var html = $(response);
+        var tables = html.find('table');
+
+        //$('#div1').html("<div id='div1'>aaa</div>");
+        $('#div1').html(tables);
+        //loadedHtml.replace("test1","modified");
     }
   });
   var x = 2;
    </script>
 
-<div id="div1"></div>
 
 </body>
 </html>
