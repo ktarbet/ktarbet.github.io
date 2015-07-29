@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+div1TYPE html>
 <html lang="en">
 <head>
 </head>
@@ -10,8 +10,12 @@
 var xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","shift.htm",false);
 xmlhttp.send();
-var xmlDoc=xmlhttp.responseText;
+var txt=xmlhttp.responseText;
+document.getElementById("div1").innerHTML=xmlhttp.responseText;
 var x = 2;
    </script>
+
+<div id="div1"></div>
+
 </body>
 </html>
