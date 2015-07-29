@@ -10,8 +10,9 @@ div1TYPE html>
 var xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","shift.htm",false);
 xmlhttp.send();
-var txt=xmlhttp.responseText;
-document.getElementById("div1").innerHTML=xmlhttp.responseText;
+var doc=xmlhttp.responseXML;
+
+//document.getElementById("div1").innerHTML=xmlhttp.responseText;
 var x = 2;
    </script>
 
