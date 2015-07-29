@@ -5,15 +5,19 @@ div1TYPE html>
 
 <body>
  
+ <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" >
   
-var xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","shifts.htm",false);
-xmlhttp.send();
-var doc=xmlhttp.responseXML;
-
-//document.getElementById("div1").innerHTML=xmlhttp.responseText;
-var x = 2;
+ $.ajax({
+    url: 'shifts.htm',
+    type: "GET",
+    dataType: 'html',
+    success: function(data){
+        var total = $(data).find('li').length;
+        console.log(total);
+    }
+  });
+  var x = 2;
    </script>
 
 <div id="div1"></div>
