@@ -13,7 +13,7 @@ var cyphertext = "UPBTU";
 
 var x = document.getElementById("div1");
 for (i = 0; i < 26; i++) {
-    x.innerHTML += i.toString() + "\n" + decode(cyphertext, i) + "<br/>";
+    x.innerHTML += i.toString() + "\n" + decode(cyphertext, i,keys) + "<br/>";
 }
 
 function decode(cyphertext, offset,keys)
