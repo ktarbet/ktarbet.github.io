@@ -1,2 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>from Cuck's homework -- </title>
+  
+<script type='text/javascript'> 
+window.onload=function(){
+var keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+    'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+var cyphertext = "UPBTU";
+
+var x = document.getElementById("div1");
+for (i = 0; i < 26; i++) {
+    x.innerHTML += i.toString() + "\n" + decode(cyphertext, i) + "<br/>";
+}
+
+function decode(cyphertext, offset)
+{
+var rval = "aa";
+return rval;
+for (i = 0; i < cyphertext.length; i++) {
+    ct = cyphertext[i];
+    var idx = keys.indexOf(ct);
+    idx += offset;
+    if (idx > 25);
+       idx = idx - 25;
+    rval += keys[idx];
+}
+return rval;
+}
+}
+
+</script>
+
+</head>
+<body>
+  <div id="div1" />
+<br/>
+  
+</body>
+
+</html>
 
