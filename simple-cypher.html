@@ -23,6 +23,7 @@ for (i = 0; i < 26; i++) {
 function decode(cyphertext, offset,keys)
 {
 var rval = "";
+var i=0;
 for (i = 0; i < cyphertext.length; i++) {
     var idx = keys.indexOf(cyphertext[i]);
     idx -= offset;
