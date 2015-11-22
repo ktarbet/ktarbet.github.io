@@ -16,12 +16,11 @@ for (i = 0; i < 26; i++) {
     x.innerHTML += i.toString() + "\n" + decode(cyphertext, i) + "<br/>";
 }
 
-function decode(cyphertext, offset)
+function decode(cyphertext, offset,keys)
 {
 var rval = "";
 for (i = 0; i < cyphertext.length; i++) {
-    ct = cyphertext[i];
-    var idx = keys.indexOf(ct);
+    var idx = keys.indexOf(cyphertext[i]);
     idx += offset;
     if (idx > 25)
        idx = idx - 25;
