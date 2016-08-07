@@ -36,6 +36,7 @@ some tips:
  * if you horse is almost setup perfect don't fuss too much you may make it worse
  * pick your battles - it is ok to loose 1/2 point you can make up somewhere else
  * never hide behind your horse  (keep your eyes on the judge step away from the horse
+ * turn into the horse so the horse is moving away from you
  
 ## Equitation 
 
@@ -44,17 +45,22 @@ In Equaitation your horsemanship is being judged.  In this dance where you are o
   Tips:
   * really listen to the judge  
   * do the pattern asked for nothing else nothing less
-  * 
-  * 
+  * when you are asked to change direction listen carefully if you are to conntiue at the same wallk or trot.
+  * when changing direction turn your horse into the center (this keeps you eye on the judge)
+  * backing up a horse keep your eyes forward on the judge or ring steward.
 
-When the saddles were put on valdes started with lessons on mounting and dismounting.   
+When the saddles were put on Valdez started with lessons on mounting and dismounting.  He showed a trick for shorter riders -- you can scrap a little pile of sand to give you the two inch boost you may need to reach your stirupps.  When a competition is very close a Jude may use something like mounting and dismouting to find first place.
 
 ## Reining
 
- How do you paint a pretty picture in reining?   
+ How do you paint a pretty picture in reining?  Have nice balance when riding a pattern. Always start to the right unless told otherwise.  If the first half of a symetrical pattern is a large circle make the second half the same.  Watch for lead changes they are required in western riding.  Make that change in the center or middle of the pattern.  Correct a wrong lead.  
 
   tips:
+   * be very calculated
    * When doing a multi part pattern make each manavoer and individual.
+   * The horse goes where you are looking.
+   * never toch the horse - you don't pet/pat your horse in competition
+   * in a bridle don't reach forwared with your free hand.
 
 If the Judge doesn't see it you don't get credit.  If the judge sees bad you loose points.
 
