@@ -2,6 +2,8 @@
 ## Karl and Tiffany's notes on: Lawrence Valdez 4H Clinic - August 6, 2016
 
 
+This was an awesome clinic!  There was so much learning we decided to write down the key parts. 
+
 
 Lawrence started by introducing himself and the ring steward.   Lawrence learned horsemanship from:  
 
