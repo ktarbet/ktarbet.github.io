@@ -44,7 +44,7 @@ Some tips:
  
 ## Equitation 
 
-In Equitation your horsemanship is being judged.  In this dance where you are on the back of a horse and you need to sit up in the saddle and keep that position.  When you stop keep your posture with hands down low and pull reigns into your belly button.
+In Equitation your horsemanship is being judged.  In this dance you are on the back of a horse and you need to sit up in the saddle and keep that position.  When you stop keep your posture with hands down low and pull reigns into your belly button.
 
   Tips:
   * Really listen to the judge  
@@ -53,7 +53,7 @@ In Equitation your horsemanship is being judged.  In this dance where you are on
   * When changing direction turn your horse into the center (this keeps you eye on the judge)
   * Backing up a horse keep your eyes forward on the judge or ring steward.
   * reverse means to reverse and stop   reverse at the trot, walk, etc means to keep gait at the reverse and keep going
-  * Legs back, shoulders back, head up, etc - should be seen at all times watch posture in transitions
+  * Legs back, shoulders back, head up,toes in,  etc - should be seen at all times watch posture in transitions
   * when backing pull to your belly button keep posture
   * if riding with one hand keep your hand on your thigh or in a fist in front of your belly button
   * he's used incorrect lead for tiebreaker at anohter fair so practice both- well trained horses can do both.
