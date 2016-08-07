@@ -40,6 +40,8 @@ Some tips:
  * Never hide behind your horse (keep your eyes on the judge step away from the horse)
  * turn into the horse so the horse is moving away from you
  * stand far enough in front so he can see your whole horse.
+  
+ 
 ## Equitation 
 
 In Equitation your horsemanship is being judged.  In this dance where you are on the back of a horse and you need to sit up in the saddle and keep that position.  When you stop keep your posture with hands down low and pull reigns into your belly button.
