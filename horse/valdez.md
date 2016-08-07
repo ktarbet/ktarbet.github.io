@@ -1,15 +1,15 @@
 
-## Karl's notes on: Lawrence Valdez 4H Clinic - August 6, 2016
+## Karl and Tiffany's notes on: Lawrence Valdez 4H Clinic - August 6, 2016
 
 
 
 Lawrence started by introducing himself and the ring steward.   Lawrence learned horsemanship from:  
 
-  * His Dad -- big start at a young age.
+  * His Dad was a trainer -- big start at a young age.
   * King Ranch
   * Pat Parelli
   * Clinton Anderson. 
-
+  
 Working with a horse is like dancing with a partner -- you need to relate to being lead through a pattern. To get his horsemanship degree Lawrence was required to take three semester of dance classes to help relate to working with a partner.  You appreciate a good partner that can help lead and understand the problems with a partner that trips around.  This helps you see the horsese perspecting while being the leader.
 
 The Clinic had these parts:
@@ -18,7 +18,7 @@ The Clinic had these parts:
  * Equitation 
  * Reining
 
-Throughtout the clinic Lawrence taught that this is all is all about painting a pretty picture. 
+Throughtout the clinic Lawrence taught that this is all is all about painting a pretty picture. The overall picture is a BIG deal.
 
 ## Showmanship 
 Showmanship is all done on the ground - no in the saddle.   According to Valdez You and your Horse must be well groomed.  You need to see the judge and the judge needs to see you. Showmanship is all about judging you and not much of the horse. 
@@ -35,9 +35,9 @@ some tips:
  * your toes should be pointed toward the horses from shoulder.
  * if you horse is almost setup perfect don't fuss too much you may make it worse
  * pick your battles - it is ok to loose 1/2 point you can make up somewhere else
- * never hide behind your horse  (keep your eyes on the judge step away from the horse
+ * never hide behind your horse  (keep your eyes on the judge step away from the horse)
  * turn into the horse so the horse is moving away from you
- 
+ * stand far enough in front so he can see your whole horse.
 ## Equitation 
 
 In Equaitation your horsemanship is being judged.  In this dance where you are on the back of a horse and you need to sit up in the saddle and keep that position.  When you stop keep your posture with hands down low and pull reigns into your belly button.
@@ -48,12 +48,20 @@ In Equaitation your horsemanship is being judged.  In this dance where you are o
   * when you are asked to change direction listen carefully if you are to conntiue at the same wallk or trot.
   * when changing direction turn your horse into the center (this keeps you eye on the judge)
   * backing up a horse keep your eyes forward on the judge or ring steward.
-
+  * reverse means to reverse and stop   reverse at the trot, walk,etc means to keep gait at the reverse and keep going
+  * legs back, shoulders back, head up, ect. should be seen at all times watch posture in transitions
+  * when backing pull to your belly button keep posture
+  * if riding with one hand keep your hand on your thigh or in a fist in front of your belly button
+  * he's used incorrect lead for tiebreaker at anohter fair so practice both- well trained horses can do both.
+  * take your time make smooth tranistions 
+  * no jerking on reins be fair to your horse
+  * you can't take 1-2 more steps after told to stop because it looks smoother.
+  * to stop don't lean back but you can drop your spine
 When the saddles were put on Valdez started with lessons on mounting and dismounting.  He showed a trick for shorter riders -- you can scrap a little pile of sand to give you the two inch boost you may need to reach your stirupps.  When a competition is very close a Jude may use something like mounting and dismouting to find first place.
 
 ## Reining
 
- How do you paint a pretty picture in reining?  Have nice balance when riding a pattern. Always start to the right unless told otherwise.  If the first half of a symetrical pattern is a large circle make the second half the same.  Watch for lead changes they are required in western riding.  Make that change in the center or middle of the pattern.  Correct a wrong lead.  
+ How do you paint a pretty picture in reining?  Have nice balance when riding a pattern. Always start to the right unless told otherwise.  If the first half of a symetrical pattern is a large circle make the second half the same.  Watch for lead changes they are required in western riding.  Make that change in the center or middle of the pattern.  Correct a wrong lead. slow and right is better than fast and wrong. 
 
   tips:
    * be very calculated
@@ -61,7 +69,7 @@ When the saddles were put on Valdez started with lessons on mounting and dismoun
    * The horse goes where you are looking.
    * never toch the horse - you don't pet/pat your horse in competition
    * in a bridle don't reach forwared with your free hand.
-
+   * set your horse up for sucess if he can't do flying lead change don't try and fail. he's rather see the simple lead change.
 If the Judge doesn't see it you don't get credit.  If the judge sees bad you loose points.
 
 Lawrence Valdez is a professional horse trainner and Judge. He lives in Rupert Idaho.
