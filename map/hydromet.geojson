@@ -1,0 +1,1736 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.9760960566359,
+                    48.03351723509636,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GCGW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.3604741462335,
+                    43.68450675910894,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "KETI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.8258180650868,
+                    43.39502805429984,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BNWI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.9774119777466,
+                    47.95659960057739,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FDRW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.3065010378031,
+                    43.51445609173426,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HLSI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.6354462703039,
+                    43.67726316244833,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GRSI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.56139,
+                    43.46222000000002,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CRMI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.0332518503398,
+                    43.77241254054714,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ALTY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.2351672947858,
+                    46.06396435378111,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CMO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.7366935745486,
+                    44.09980237493567,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GCKY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.6688539453916,
+                    44.1334777231751,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SKRY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.6674580410538,
+                    44.09914518297548,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FLGY",
+                "description": "http://www.usbr.gov/pn-bin/rtgraph.pl?sta=FLGY&parm=Q<b>\nSnake River near Flagg Ranch, WY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.5896659316346,
+                    43.85743154580616,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "JCK"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.5174205412047,
+                    43.85045464341503,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PCKY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.6895394285972,
+                    44.04590431859434,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HKBY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.44111,
+                    43.83805000000001,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BFKY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.8187656775448,
+                    44.13173570369756,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GRS"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.7386719116251,
+                    43.37207472832608,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "JKSY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.9767506055954,
+                    43.14296552049636,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GREY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.8895682376307,
+                    43.19627072940611,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ALPY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.0373464174552,
+                    43.07963520615238,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SALY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.7612648221885,
+                    43.48557833921285,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "JKNY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.2188817137603,
+                    43.35089974424613,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PALI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.2055965094685,
+                    43.33462103081449,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PAL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.05723,
+                    43.49306000000001,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "LWOI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.9996778510834,
+                    43.38995740699212,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WODI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.02723,
+                    43.42527999999998,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WOD"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.0183846939684,
+                    42.52814589431814,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MILI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.0138863953332,
+                    42.52334438166895,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MIL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.5003366475203,
+                    42.67289752805166,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MINI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -113.4827256377798,
+                    42.67026422062862,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MIN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.8794739942514,
+                    42.76751800274472,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "AMFI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.87917,
+                    42.77916999999999,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "AMF"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.5187919762053,
+                    43.12513845503351,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BFTI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.3693021001762,
+                    43.19730610727002,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SNAI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -112.135,
+                    43.41305555555555,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SHYI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.9050307705625,
+                    43.82587015086659,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "REXI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.6138030459657,
+                    43.92704859261486,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "TEAI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7160516842552,
+                    43.63900029243396,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DRYI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.8947972276351,
+                    43.57453060501774,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WILI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.6598844444736,
+                    43.61239853257064,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HEII"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.8781013360988,
+                    43.73536074178671,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "LORI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.9119467409381,
+                    43.5762247044451,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WIFI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7982771718439,
+                    43.60870300039811,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ELCI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7427411451924,
+                    43.58034455050662,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "RIR"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7388828144909,
+                    43.5824587896658,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "RIWI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.6726182236222,
+                    43.96683517155641,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ANTI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.7282756990503,
+                    43.44186478437958,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WTXI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.56583,
+                    44.01833000000001,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CHEI"
+            },
+            "id": "khstation262"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.5105202760979,
+                    44.06975529925171,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HFAI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.24121508256,
+                    44.06860582007345,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "FALI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3982001293742,
+                    44.41958509644979,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ISL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.39472,
+                    44.41639000000003,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ISLI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3495995075589,
+                    44.59521279408035,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HENI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3535527727239,
+                    44.59711070944042,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HEN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.7472709642898,
+                    48.53741598987177,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CCR"
+            },
+            "id": "khstation1160"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.6461111111111,
+                    48.96972222222222,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CIBW - WQ",
+                "description": "Auxillary Gage station for CIBW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.3115277777778,
+                    44.64630555555556,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "VLVI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -110.4027232504923,
+                    43.19884174323531,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BOUY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.7459988931535,
+                    48.55777410342376,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CCL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.2995869486749,
+                    47.61419548177224,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DRYW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.781729961047,
+                    45.01247633563688,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "THF-1/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.8378724648661,
+                    46.21265616479346,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WAH"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.6490800179757,
+                    42.86645900768048,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ROMO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2097743073503,
+                    43.57457170994069,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WARO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.9957776575333,
+                    44.67269512521959,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PHL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.2093411632568,
+                    43.58533430713512,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WAR"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.73666,
+                    46.16722,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "SOL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.2187829237059,
+                    43.98755012002031,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "VALO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1804265655067,
+                    44.50311357252279,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "UNY-1/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.8573858679574,
+                    46.37187821583102,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "RSA"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.0922577980783,
+                    44.68473607090365,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PRHO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.8314933709216,
+                    44.76803674762487,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PWDO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.6276088830839,
+                    43.89624223905678,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PLEI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.1189546431236,
+                    44.90733271306462,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PAYI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.1192990409269,
+                    44.91220175345901,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PAY"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.0987547462923,
+                    41.94677928200542,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "OWYN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.9254734497393,
+                    44.04231576479328,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PRPI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.2430388209964,
+                    43.64158647674772,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "OWY-2/3",
+                "description": "Forebay gage"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.2557312445211,
+                    43.65448854735228,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "OWY-3/3",
+                "description": "River Gage"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.9897566834531,
+                    43.64795078832053,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MORI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.6226086106457,
+                    44.08525828989294,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "PRLI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.0591818723688,
+                    43.52766520091116,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "LUC"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.9650471963588,
+                    41.83709536697303,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MOCN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.2465813356495,
+                    43.65023,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "OWY-1/3"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.86278,
+                    42.41056000000003,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MCDO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.8943492759794,
+                    44.39177763686015,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MAN"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.83472,
+                    43.83611000000001,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "IDHI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.0203538127553,
+                    44.0402680022886,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MALO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.1968747231067,
+                    43.94314032651692,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "HRSI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.3313772747116,
+                    43.78439514727115,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MADO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1727663452805,
+                    43.94882019357156,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "MABO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.6459165962024,
+                    44.29360611538068,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DEDI-1/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.4413250324498,
+                    43.92442408476617,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ETSI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.4371049050763,
+                    43.93049930619412,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "EMM"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.0496730471983,
+                    44.52471605651545,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CSC-1/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.641881278209,
+                    44.2919428641874,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DEDI-2/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3403657010377,
+                    42.94030681948572,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DANO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.726267,
+                    43.66816,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BTSI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.109874,
+                    43.550381,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BSEI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.152321,
+                    43.909073,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BEUO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.3975070866177,
+                    44.01334537544028,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BUL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.060355,
+                    43.107007,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BALO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.4318595174881,
+                    44.73038152218138,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CNCI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.157175,
+                    43.911348,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BEU"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.27916,
+                    43.660509,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BIGI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.307594,
+                    43.495632,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BRFI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.6440170046127,
+                    44.29604067303102,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DED-1/2"
+            },
+            "id": "khstation274"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.477435,
+                    43.343588,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ANDI",
+                "description": "Usgs gaging station.  Also used for USBR SCADA for river readout"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.126912,
+                    43.804338,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ATLI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.6453785583343,
+                    44.29388271718511,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DED-2/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.451662,
+                    43.357114,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "AND"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1775526938718,
+                    44.50367661133308,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "UNY - 2/2",
+                "description": "RIVER GAGE"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.9163845608559,
+                    47.79097423289068,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ALMW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.1319282040912,
+                    47.65607682491902,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "DAVW"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.8296308741851,
+                    46.20617576438214,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "WAFI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -114.868108,
+                    43.619,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BSKI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.7815975402672,
+                    45.00541185229489,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "THF-2/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.9234132122503,
+                    43.59401032726167,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ARK"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.093827,
+                    43.537637,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "BDDI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.0462468593359,
+                    44.52489785291844,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "CSC-2/2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.9217026904715,
+                    44.06269271496044,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "GAVI"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -116.7425638332835,
+                    43.5780588890859,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "LOW"
+            }
+        }
+    ]
+}
