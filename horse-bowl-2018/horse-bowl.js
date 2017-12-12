@@ -8,7 +8,7 @@ function showQuestion() {
    document.getElementById("answer").innerHTML = "";
 
   var x = getRandomQuestion();
-  document.getElementById("question").innerHTML = x.category+"<br/>"+ x.number+"<br/> "+ x.question;
+  document.getElementById("question").innerHTML = x.category+"<br/>"+ x.number+" "+x.level+"<br/> "+ x.question;
 
   document.getElementById("answer").innerHTML =  x.answer;
   document.getElementById("answer").style.display = "none"
