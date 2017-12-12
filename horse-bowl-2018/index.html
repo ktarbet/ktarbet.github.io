@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Horse Bowl</title>
+</head>
+<h3>Horse Bowl Questions</h3>
+<body>
+
+<select id="category"></select>
+ <script src="horse-bowl-2018.json"></script>
+
+
+<input id="novice" type="checkbox" checked="true"> novice  
+ <input id="easy" type="checkbox" checked="true"> easy 
+<input id="medium" type="checkbox"> medium 
+<input id="intermediate" type="checkbox"> intermediate 
+<input id="hard" type="checkbox"> hard 
+<input id="jrbonus" type="checkbox"> jr bonus 
+<input id="intbonus" type="checkbox"> int bonus 
+<input id="srbonus" type="checkbox"> sr bonus 
+
+
+    <div id="question"> </div>
+      
+    <button type="button" onclick="showAnswer()">Show Answer</button>
+    <button id="btnNext" type="button" onclick="showQuestion()">Next Question</button>
+   <div id="answer">  </div>
+
+  </br> 
+  <div id="status" style="font-size: x-small" >  </div>
+  
+ <script src="horse-bowl.js"></script>
+
+ 
+</body>
+
+</html> 
