@@ -1,3 +1,5 @@
 p {
    font-size: larger;
 } 
+
+p#status { font-size: small}
