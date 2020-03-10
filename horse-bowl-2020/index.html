@@ -1,0 +1,47 @@
+﻿ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="horse-bowl.css">
+<title>Horse Bowl- 2020</title>
+</head>
+<h3>Horse Bowl Questions</h3>
+<body>
+
+    <select id="category"></select>
+    <script src="horse-bowl.json"></script>
+
+
+    <input id="novice" type="checkbox" checked="true"> novice
+    <input id="easy" type="checkbox" checked="true"> easy
+    <input id="medium" type="checkbox"> medium
+    <input id="intermediate" type="checkbox"> intermediate
+    <input id="hard" type="checkbox"> hard
+    <input id="jrbonus" type="checkbox"> jr bonus
+    <input id="intbonus" type="checkbox"> int bonus
+    <input id="srbonus" type="checkbox"> sr bonus
+
+    <p>
+        <div id="question"></div>
+
+        <button type="button" onclick="showAnswer()">Show Answer</button>
+        <button id="btnNext" type="button" onclick="showQuestion()">Next Question</button>
+        <br />
+        <div id="answer"></div>
+    </p>
+
+    </br>
+
+    <p id="status">
+        <div id="status">  </div>
+    </p>
+    <script src="horse-bowl.js"></script>
+    <br />
+
+    <a href="about.html">About Horse Bowl</a>
+    <br />
+    source: 3.9.20 Ada County Horse Bowl Questions
+
+</body>
+
+</html> 
