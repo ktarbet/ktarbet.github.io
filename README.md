@@ -7,4 +7,4 @@ Karl is the primary author of <a href="https://github.com/usbr/Pisces">Pisces</a
  
 Gradually varied flow (<a href="http://ktarbet.github.io/circular_gvf/index.html"> GVF</a>) in circular pipe.  HTML5 and JavaScript
 
-<a href="http://ktarbet.github.com"> ktarbet.github.com </a>
+<a href="http://ktarbet.github.io"> ktarbet.github.io </a>
